@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace Management_B1ND.Properties
+namespace ManageMent_Program.Properties
 {
     /// <summary>
     ///   지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
@@ -43,7 +43,7 @@ namespace Management_B1ND.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Management_B1ND.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ManageMent_Program.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

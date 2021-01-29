@@ -10,10 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Management_B1ND
+namespace ManageMent_Program.View
 {
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
@@ -23,6 +22,11 @@ namespace Management_B1ND
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
