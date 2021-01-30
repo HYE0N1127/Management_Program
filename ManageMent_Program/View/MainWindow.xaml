@@ -5,6 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageMent_Program.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
-    <Grid/>
+        Title="바인드 멤버관리 프로그램" Height="900" Width="1600">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+            <ColumnDefinition Width="800"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
 </Window>
