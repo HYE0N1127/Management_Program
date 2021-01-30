@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ManageMent_Program.ViewModel;
 
 namespace ManageMent_Program.View
 {
@@ -19,14 +20,18 @@ namespace ManageMent_Program.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        ManagerViewModel ManagerViewModel = new ManagerViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
+            this.DataContext = ManagerViewModel;
         }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Prism.Mvvm;
 
 namespace ManageMent_Program.Model
 {
-    class Imformation
+    public class Imformation
     {
+
     }
 }

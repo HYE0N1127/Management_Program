@@ -7,6 +7,39 @@
         mc:Ignorable="d"
         Title="바인드 멤버관리 프로그램" Height="900" Width="1600">
 
+    <Window.Resources>
+        <Style x:Key="tbPlaceHolder" TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Border"
+                                Height="60" Width="200"
+                                Padding="20 0 0 0"
+                                Background="White">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              VerticalAlignment="Center"
+                                              Cursor="IBeam"/>
+                                <TextBlock x:Name="Tag" 
+                                           FontSize="15"
+                                           Foreground="LightGray"
+                                           VerticalAlignment="Center"
+                                           Visibility="Collapsed"
+                                           Text="{TemplateBinding Tag}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="Tag" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -19,5 +52,10 @@
             <ColumnDefinition Width="800"/>
             <ColumnDefinition Width="800"/>
         </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" x:Name="OptionPlace">
+            <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!" Width="200" Height="60"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,7,555,8" BorderBrush="Black" BorderThickness="1"/>
+        </StackPanel>
     </Grid>
 </Window>
