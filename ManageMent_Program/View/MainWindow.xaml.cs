@@ -33,5 +33,16 @@ namespace ManageMent_Program.View
         {
             this.DataContext = ManagerViewModel;
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("추가되었습니다!", "성공");
+            
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("삭제되었습니다!", "성공");
+        }
     }
 }
