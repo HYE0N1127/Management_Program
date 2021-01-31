@@ -63,13 +63,29 @@
             
         </StackPanel>
 
-        <StackPanel x:Name="winDepartment"/>
+        <StackPanel x:Name="winDepartment" Width="600" Height="300" Margin="100,150,892,419" Background="AliceBlue">
+            <ScrollViewer>
+                
+            </ScrollViewer>
+        </StackPanel>
 
-        <StackPanel x:Name="SerDepartment"/>
+        <StackPanel x:Name="SerDepartment" Width="600" Height="300" Margin="892,150,100,419" Background="AliceBlue">
+            <ScrollViewer>
 
-        <StackPanel x:Name="WebDepartment"/>
-        
-        <StackPanel x:Name="AndDepertment"/>
+            </ScrollViewer>
+        </StackPanel>
+
+        <StackPanel x:Name="WebDepartment" Width="600" Height="300" Margin="100,489,892,80" Background="AliceBlue">
+            <ScrollViewer>
+
+            </ScrollViewer>
+        </StackPanel>
+
+        <StackPanel x:Name="AndDepertment" Width="600" Height="300" Margin="892,489,100,80" Background="AliceBlue">
+            <ScrollViewer>
+
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
     
 </Window>
