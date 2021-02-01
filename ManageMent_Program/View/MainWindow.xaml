@@ -48,7 +48,8 @@
             <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!" Width="200" Height="35"
                      HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
 
-            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" >
+            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center" FontSize="15" IsEditable="True" IsReadOnly="True" Text="팀을 선택해주세요!~">
                 <ComboBoxItem Content="Windows"/>
                 <ComboBoxItem Content="Server"/>
                 <ComboBoxItem Content="Web"/>
