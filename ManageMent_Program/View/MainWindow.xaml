@@ -47,12 +47,12 @@
         <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="30,15,762,795" >
             <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!" Width="200" Height="35"
                      HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-            
-            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0">
-                <ComboBoxItem>Windows</ComboBoxItem>
-                <ComboBoxItem>Server</ComboBoxItem>
-                <ComboBoxItem>Web</ComboBoxItem>
-                <ComboBoxItem>Android</ComboBoxItem>
+
+            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" >
+                <ComboBoxItem Content="Windows"/>
+                <ComboBoxItem Content="Server"/>
+                <ComboBoxItem Content="Web"/>
+                <ComboBoxItem Content="Android"/>
             </ComboBox>
 
             <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
@@ -64,25 +64,25 @@
         </StackPanel>
 
         <StackPanel x:Name="winDepartment" Width="600" Height="300" Margin="100,150,892,419" Background="AliceBlue">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 
             </ScrollViewer>
         </StackPanel>
 
         <StackPanel x:Name="SerDepartment" Width="600" Height="300" Margin="892,150,100,419" Background="AliceBlue">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
             </ScrollViewer>
         </StackPanel>
 
         <StackPanel x:Name="WebDepartment" Width="600" Height="300" Margin="100,489,892,80" Background="AliceBlue">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
             </ScrollViewer>
         </StackPanel>
 
         <StackPanel x:Name="AndDepertment" Width="600" Height="300" Margin="892,489,100,80" Background="AliceBlue">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
 
             </ScrollViewer>
         </StackPanel>
