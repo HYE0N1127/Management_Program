@@ -3,19 +3,15 @@
 namespace ManageMent_Program.Model
 {
     public class Student : BindableBase
-        // public class Student : INotifyPropertyChanged
         {
-            private string _firstName;
-            public string FirstName
+            private string _name;
+            public string Name
             {
-                get => _firstName;
+                get => _name;
 
                 set
                 {
-                    SetProperty(ref _firstName, value);
-
-                    //_firstName = value;
-                    //NotifyPropertyChanged(nameof(FirstName));
+                SetProperty(ref _name, value);
                 }
             }
 
@@ -37,9 +33,8 @@ namespace ManageMent_Program.Model
             {
                 get
                 {
-                    return _firstName + " " + _department;
+                    return _name + " " + _department;
                 }
             }
-
         }
     }
