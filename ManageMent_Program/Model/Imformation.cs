@@ -4,19 +4,30 @@ namespace ManageMent_Program.Model
 {
     public class Student : BindableBase
         {
+        public enum DepartmentTeams
+        {
+            WINDOW,
+            SERVER,
+            WEB,
+            ANDROID
+        };
+
+        // 언더바가 붙은 변수명은 무조건 private로 지정해주세요
             private string _name;
             public string Name
             {
-                get => _name;
-
+            get
+            {
+                return _name;
+            }
                 set
                 {
                 SetProperty(ref _name, value);
                 }
             }
 
-            private string _department;
-            public string Department
+      private DepartmentTeams _department;
+        public DepartmentTeams Department
             {
                 get 
                 { 
@@ -27,7 +38,7 @@ namespace ManageMent_Program.Model
                 {
                     SetProperty(ref _department, value);
                 }
-            }
+          }
 
             public string StudentImformation
             {
@@ -36,5 +47,5 @@ namespace ManageMent_Program.Model
                     return _name + " " + _department;
                 }
             }
-        }
     }
+}

@@ -40,53 +40,74 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <DataTemplate x:Key="studentListBox">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding studentName, Mode = OneWay}" Width = "600" Height="50" Margin = "30, 0, 0, 0"/>
+                <TextBlock Text="{Binding department, Mode = OneWay}" Width = "100" Height="50" Margin = "30, 0, 0, 0"/>
+            </StackPanel>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
-        
+
         <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="30,15,762,795" >
             <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!" Width="200" Height="35"
-                     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Text="{Binding Student.name}"/>
 
-            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center" FontSize="15" IsEditable="True" IsReadOnly="True" Text="팀을 선택해주세요!" SelectionChanged="cbDepartment_SelectionChanged">
-                <ComboBoxItem Content="Windows"/>
-                <ComboBoxItem Content="Server"/>
-                <ComboBoxItem Content="Web"/>
-                <ComboBoxItem Content="Android"/>
-            </ComboBox>
+            <TextBox x:Name="tbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center" Style="{StaticResource tbPlaceHolder}"
+                     Tag="팀을 입력해주세요"  VerticalContentAlignment="Center" FontSize="15" Text="{Binding Student.department}"/>
 
             <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
                     BorderThickness="0" Click="btnAdd_Click" Command="{Binding StudentAddCommand}"/>
 
             <Button x:Name="btnDelete" Content="삭제하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0"
                     BorderThickness="0" Click="btnDelete_Click" Command="{Binding StudentDeleteCommand}"/>
-            
         </StackPanel>
 
-        <StackPanel x:Name="winDepartment" Width="600" Height="300" Margin="100,150,892,419" Background="AliceBlue">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                
-            </ScrollViewer>
-        </StackPanel>
+        <ListBox
+            x:Name="windowDepartment"
+            Width="600" Height="300"
+            Background="AliceBlue"
+            Margin="100,150,892,419"
+            ItemsSource = "{Binding Students}" 
+            SelectedItem = "{Binding SelectedStudent}"
+            ItemTemplate = "{StaticResource studentListBox}">
 
-        <StackPanel x:Name="SerDepartment" Width="600" Height="300" Margin="892,150,100,419" Background="AliceBlue">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        </ListBox>
 
-            </ScrollViewer>
-        </StackPanel>
+        <ListBox
+            x:Name="serverDepartment"
+            Width="600" Height="300"
+            Background="AliceBlue"
+            Margin="892,150,100,419"
+            ItemsSource = "{Binding Students}" 
+            SelectedItem = "{Binding SelectedStudent}"
+            ItemTemplate = "{StaticResource studentListBox}">
 
-        <StackPanel x:Name="WebDepartment" Width="600" Height="300" Margin="100,489,892,80" Background="AliceBlue">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        </ListBox>
 
-            </ScrollViewer>
-        </StackPanel>
+        <ListBox
+            x:Name="webDepartment"
+            Width="600" Height="300"
+            Background="AliceBlue"
+            Margin="100,489,892,80"
+            ItemsSource = "{Binding Students}" 
+            SelectedItem = "{Binding SelectedStudent}"
+            ItemTemplate = "{StaticResource studentListBox}">
 
-        <StackPanel x:Name="AndDepertment" Width="600" Height="300" Margin="892,489,100,80" Background="AliceBlue">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        </ListBox>
 
-            </ScrollViewer>
-        </StackPanel>
+        <ListBox
+            x:Name="andDepartment"
+                    Width="600" Height="300"
+                    Background="AliceBlue"
+            Margin="892,489,100,80"
+            ItemsSource = "{Binding Students}" 
+            SelectedItem = "{Binding SelectedStudent}"
+            ItemTemplate = "{StaticResource studentListBox}">
+
+        </ListBox>
     </Grid>
     
 </Window>
