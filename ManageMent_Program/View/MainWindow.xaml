@@ -50,64 +50,31 @@
     </Window.Resources>
 
     <Grid>
-
         <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="30,15,762,795" >
-            <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!" Width="200" Height="35"
-                     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Text="{Binding Student.name}"/>
+                <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!"
+                         Width="200" Height="35"
+                         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" 
+                         Text="{Binding Student.name}"/>
 
-            <TextBox x:Name="tbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center" Style="{StaticResource tbPlaceHolder}"
-                     Tag="팀을 입력해주세요"  VerticalContentAlignment="Center" FontSize="15" Text="{Binding Student.department}"/>
+                <TextBox x:Name="tbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0"
+                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                         Style="{StaticResource tbPlaceHolder}" Tag="팀을 입력해주세요" FontSize="15" 
+                         Text="{Binding Student.department}"/>
 
-            <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
-                    BorderThickness="0" Click="btnAdd_Click" Command="{Binding StudentAddCommand}"/>
+                <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
+                        BorderThickness="0" Click="btnAdd_Click" Command="{Binding StudentAddCommand}"/>
 
-            <Button x:Name="btnDelete" Content="삭제하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0"
-                    BorderThickness="0" Click="btnDelete_Click" Command="{Binding StudentDeleteCommand}"/>
-        </StackPanel>
+                <Button x:Name="btnDelete" Content="삭제하기" Width="100" Height="35" Background="LightGray" 
+                        Margin="50, 0, 0, 0" BorderThickness="0" 
+                        Click="btnDelete_Click" Command="{Binding StudentDeleteCommand}"/>
+            </StackPanel>
 
-        <ListBox
-            x:Name="windowDepartment"
-            Width="600" Height="300"
-            Background="AliceBlue"
-            Margin="100,150,892,419"
-            ItemsSource = "{Binding Students}" 
-            SelectedItem = "{Binding SelectedStudent}"
-            ItemTemplate = "{StaticResource studentListBox}">
-
-        </ListBox>
-
-        <ListBox
-            x:Name="serverDepartment"
-            Width="600" Height="300"
-            Background="AliceBlue"
-            Margin="892,150,100,419"
-            ItemsSource = "{Binding Students}" 
-            SelectedItem = "{Binding SelectedStudent}"
-            ItemTemplate = "{StaticResource studentListBox}">
-
-        </ListBox>
-
-        <ListBox
-            x:Name="webDepartment"
-            Width="600" Height="300"
-            Background="AliceBlue"
-            Margin="100,489,892,80"
-            ItemsSource = "{Binding Students}" 
-            SelectedItem = "{Binding SelectedStudent}"
-            ItemTemplate = "{StaticResource studentListBox}">
-
-        </ListBox>
-
-        <ListBox
-            x:Name="andDepartment"
-                    Width="600" Height="300"
-                    Background="AliceBlue"
-            Margin="892,489,100,80"
-            ItemsSource = "{Binding Students}" 
-            SelectedItem = "{Binding SelectedStudent}"
-            ItemTemplate = "{StaticResource studentListBox}">
-
-        </ListBox>
+            <ListBox
+                x:Name="lbDepartment"
+                Background="AliceBlue" Height="750" Width="1600"
+                ItemsSource = "{Binding Students}" 
+                SelectedItem = "{Binding studentSelect}"
+                ItemTemplate = "{StaticResource studentListBox}" Margin="0,120,0,0"/>
     </Grid>
-    
+
 </Window>

@@ -44,6 +44,7 @@ namespace ManageMent_Program.View
         {
             MessageBox.Show("삭제되었습니다!", "성공");
         }
+
     }
 }
 

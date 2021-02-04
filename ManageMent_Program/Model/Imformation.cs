@@ -26,8 +26,8 @@ namespace ManageMent_Program.Model
                 }
             }
 
-      private DepartmentTeams _department;
-        public DepartmentTeams Department
+      private string _department;
+        public string Department
             {
                 get 
                 { 
