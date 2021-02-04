@@ -56,25 +56,27 @@
                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" 
                          Text="{Binding Student.name}"/>
 
-                <TextBox x:Name="tbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0"
-                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                         Style="{StaticResource tbPlaceHolder}" Tag="팀을 입력해주세요" FontSize="15" 
-                         Text="{Binding Student.department}"/>
+            <ComboBox x:Name="cbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center" FontSize="15" IsEditable="True" IsReadOnly="True" 
+                      Text="팀을 선택해주세요!" >
+                <ComboBoxItem Content="Windows"/>
+                <ComboBoxItem Content="Server"/>
+                <ComboBoxItem Content="Web"/>
+            </ComboBox>
 
-                <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
-                        BorderThickness="0" Click="btnAdd_Click" Command="{Binding StudentAddCommand}"/>
+            <Button x:Name="btnAdd" Content="추가하기" Width="100" Height="35" Background="LightGray" Margin="50, 0, 0, 0" 
+                        BorderThickness="0" Command="{Binding StudentAddCommand}"/>
 
                 <Button x:Name="btnDelete" Content="삭제하기" Width="100" Height="35" Background="LightGray" 
                         Margin="50, 0, 0, 0" BorderThickness="0" 
-                        Click="btnDelete_Click" Command="{Binding StudentDeleteCommand}"/>
+                         Command="{Binding StudentDeleteCommand}"/>
             </StackPanel>
 
-            <ListBox
-                x:Name="lbDepartment"
-                Background="AliceBlue" Height="750" Width="1600"
-                ItemsSource = "{Binding Students}" 
-                SelectedItem = "{Binding studentSelect}"
-                ItemTemplate = "{StaticResource studentListBox}" Margin="0,120,0,0"/>
+        <ListView
+                x:Name="lvDepartment"
+                Background="AliceBlue" Height="750" Width="1600" Margin="0,120,0,0">
+            
+        </ListView>
     </Grid>
 
 </Window>

@@ -25,26 +25,7 @@ namespace ManageMent_Program.View
         public MainWindow()
         {
             InitializeComponent();
-            this.Loaded += MainWindow_Loaded;
-
         }
-
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = ManagerViewModel;
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("추가되었습니다!", "성공");
-            
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("삭제되었습니다!", "성공");
-        }
-
     }
 }
 
