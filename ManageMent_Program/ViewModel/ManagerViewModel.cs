@@ -8,13 +8,22 @@ namespace ManageMent_Program.ViewModel
 {
     public class ManagerViewModel : BindableBase
     {
-        #region 학생 추가, 삭제
-        
-        public DelegateCommand StudentAddCommand { get; set; }
+        private string _inputStudent;
+        public string InputStudent
+        {
+            get => _inputStudent;
+            set => SetProperty(ref _inputStudent, value);
+        }
 
-        public DelegateCommand StudentDeleteCommand { get; set; }
+        private string _selectedStudent;
 
-        #endregion  
+        public string SelectedStudent
+        {
+            get => _selectedStudent;
+            set => SetProperty(ref _selectedStudent, value);
+        }
+
+
     }
 }
 
