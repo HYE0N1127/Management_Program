@@ -8,6 +8,7 @@ namespace ManageMent_Program.ViewModel
 {
     public class ManagerViewModel : BindableBase
     {
+        #region Get, Set
         private string _inputStudent;
         public string InputStudent
         {
@@ -22,8 +23,17 @@ namespace ManageMent_Program.ViewModel
             get => _selectedStudent;
             set => SetProperty(ref _selectedStudent, value);
         }
+        #endregion
 
+        #region List
 
+        public ObservableCollection<Student> Students
+        {
+            get;
+            set;
+        }
+
+        #endregion
     }
 }
 
