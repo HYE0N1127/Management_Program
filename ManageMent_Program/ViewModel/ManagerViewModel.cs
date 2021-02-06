@@ -27,12 +27,23 @@ namespace ManageMent_Program.ViewModel
 
         #region List
 
-        public ObservableCollection<Student> Students
+        public ObservableCollection<Student> student
         {
             get;
             set;
         }
 
+        #endregion
+
+        #region
+        public DelegateCommand StudentAddCommand { get; set; }
+        public DelegateCommand StudentDeleteCommand { get; set; }
+
+        public ManagerViewModel()
+        {
+            //StudentAddCommand = new DelegateCommand(StudentAdd, CanAdd);
+            //StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);        
+        }
         #endregion
     }
 }
