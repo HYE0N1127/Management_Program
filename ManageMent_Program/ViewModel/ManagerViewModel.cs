@@ -52,18 +52,22 @@ namespace ManageMent_Program.ViewModel
 
         private void CanAdd()
         {
-
+            // student.Delete(SelectedStudent);
         }
 
-        private void StudentDelete()
+        private bool StudentDelete()
+        {
+            return _inputStudent != null;
+        }
+
+        private bool CanDelete()
         {
 
         }
+        #endregion
 
-        private void CanDelete()
-        {
+        #region 콤보박스 바인딩
 
-        }
         #endregion
     }
 }
