@@ -35,7 +35,7 @@ namespace ManageMent_Program.ViewModel
 
         #endregion
 
-        #region
+        #region 추가 커맨드
         public DelegateCommand StudentAddCommand { get; set; }
         public DelegateCommand StudentDeleteCommand { get; set; }
 
@@ -43,6 +43,26 @@ namespace ManageMent_Program.ViewModel
         {
             //StudentAddCommand = new DelegateCommand(StudentAdd, CanAdd);
             //StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);        
+        }
+
+        private void StudentAdd()
+        {
+           // student.Add();
+        }
+
+        private void CanAdd()
+        {
+
+        }
+
+        private void StudentDelete()
+        {
+
+        }
+
+        private void CanDelete()
+        {
+
         }
         #endregion
     }
