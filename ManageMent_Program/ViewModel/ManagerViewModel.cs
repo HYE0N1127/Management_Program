@@ -9,16 +9,16 @@ namespace ManageMent_Program.ViewModel
     public class ManagerViewModel : BindableBase
     {
         #region Get, Set
-        private string _inputStudent;
-        public string InputStudent
+        private Student _inputStudent = new Student();
+        public Student InputStudent
         {
             get => _inputStudent;
             set => SetProperty(ref _inputStudent, value);
         }
 
-        private string _selectedStudent;
+        private Student _selectedStudent = new Student();
 
-        public string SelectedStudent
+        public Student SelectedStudent
         {
             get => _selectedStudent;
             set => SetProperty(ref _selectedStudent, value);
@@ -27,11 +27,7 @@ namespace ManageMent_Program.ViewModel
 
         #region List
 
-        public ObservableCollection<Student> student
-        {
-            get;
-            set;
-        }
+        public ObservableCollection<Student> students = new ObservableCollection<Student>();
 
         #endregion
 
@@ -47,28 +43,27 @@ namespace ManageMent_Program.ViewModel
 
         private void StudentAdd()
         {
-           // student.Add();
+            students.Add(new Student() { Name = _inputStudent.Name });
+            // 부서 부분을 추가해야 합니다!
+            // 데이터 바인딩 이후 추가 예정 -> 콤보박스 바인딩
         }
 
-        private void CanAdd()
-        {
-            // student.Delete(SelectedStudent);
-        }
-
-        private bool StudentDelete()
+        private bool CanAdd()
         {
             return _inputStudent != null;
         }
 
+        private void StudentDelete()
+        {
+            students.Remove(SelectedStudent);
+        }
+
         private bool CanDelete()
         {
-
+             return true;
         }
         #endregion
 
-        #region 콤보박스 바인딩
-
-        #endregion
     }
 }
 
