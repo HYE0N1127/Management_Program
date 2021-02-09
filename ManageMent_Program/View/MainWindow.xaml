@@ -43,8 +43,8 @@
 
         <DataTemplate x:Key="studentListBox">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding studentName, Mode = OneWay}" Width = "600" Height="50" Margin = "30, 0, 0, 0"/>
-                <TextBlock Text="{Binding department, Mode = OneWay}" Width = "100" Height="50" Margin = "30, 0, 0, 0"/>
+                <TextBlock Text="{Binding Name, Mode = OneWay}" Width = "600" Height="50" Margin = "30, 0, 0, 0" FontSize="25"/>
+                <TextBlock Text="{Binding Department, Mode = OneWay}" Width = "100" Height="50" Margin = "30, 0, 0, 0" FontSize="25"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
@@ -53,12 +53,12 @@
         <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="30,15,762,795" >
                 <TextBox x:Name="tbNamePlace" Style="{StaticResource tbPlaceHolder}" Tag="이름을 입력해주세요!"
                          Width="200" Height="35"
-                         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" 
-                         Text="{Binding InputStudent.Name}"/>
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" 
+                         Text="{Binding TestName}"/>
 
             <TextBox x:Name="tbDepartment" Width="200" Height="35" Margin="50, 0, 0, 0" HorizontalContentAlignment="Center"
                       VerticalContentAlignment="Center" FontSize="15" Style="{StaticResource tbPlaceHolder}" Tag="부서를 입력해주세요!"
-                     Text="{Binding InputStudent.Department}">
+                     Text="{Binding TestDepartment}">
 
             </TextBox>
 

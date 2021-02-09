@@ -3,12 +3,30 @@ using Prism.Mvvm;
 using System.Collections.ObjectModel;
 using ManageMent_Program.Model;
 using ManageMent_Program.View;
+using System.Diagnostics;
+using System.Windows;
 
 namespace ManageMent_Program.ViewModel
 {
     public class ManagerViewModel : BindableBase
     {
         #region Get, Set
+        private string _testName = "이름";
+
+        public string TestName
+        {
+            get => _testName;
+            set => SetProperty(ref _testName, value);
+        }
+
+        private string _testDepartment;
+
+        public string TestDepartment
+        {
+            get => _testDepartment;
+            set => SetProperty(ref _testDepartment, value);
+        }
+
         private Student _inputStudent = new Student();
         public Student InputStudent
         {
@@ -27,7 +45,7 @@ namespace ManageMent_Program.ViewModel
 
         #region List
 
-        public ObservableCollection<Student> students = new ObservableCollection<Student>();
+        public ObservableCollection<Student> Students { get; set; }
 
         #endregion
 
@@ -39,15 +57,22 @@ namespace ManageMent_Program.ViewModel
         {
             // 델리게이트를 이용하여 커맨드가 실행되면 두가지 함수가 실행되게 해주었습니다
             StudentAddCommand = new DelegateCommand(StudentAdd, CanAdd);
-            StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);        
+            StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);
+
+            Students = new ObservableCollection<Student>();
         }
 
         private void StudentAdd()
         {
-            if (string.IsNullOrEmpty(_inputStudent.Name) && string.IsNullOrEmpty(_inputStudent.Department))
+            MessageBox.Show(TestName, TestDepartment);
+
+            if (!string.IsNullOrEmpty(TestName) && !string.IsNullOrEmpty(TestDepartment))
             {
-                students.Add(new Student() { Name = _inputStudent.Name, Department = _inputStudent.Department });
+                Students.Add(new Student() { Name = TestName, Department = TestDepartment });
             }
+            MessageBox.Show(TestName + "님이 추가되었습니다", "알림");
+            TestName = "";
+            TestDepartment = "";
         }
 
         private bool CanAdd()
@@ -57,13 +82,15 @@ namespace ManageMent_Program.ViewModel
 
         private void StudentDelete()
         {
-            students.Remove(SelectedStudent);
+            Students.Remove(SelectedStudent);
+            MessageBox.Show(TestName + "님이 삭제되었습니다", "알림");
+
         }
 
         private bool CanDelete()
         {
-            if(SelectedStudent != null)
-            { 
+            if (SelectedStudent != null)
+            {
                 return true;
             }
             return false;
