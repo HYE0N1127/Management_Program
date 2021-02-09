@@ -39,13 +39,5 @@ namespace ManageMent_Program.Model
                     SetProperty(ref _department, value);
                 }
           }
-
-            public string StudentImformation
-            {
-                get
-                {
-                    return _name + " " + _department;
-                }
-            }
     }
 }

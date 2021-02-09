@@ -37,15 +37,17 @@ namespace ManageMent_Program.ViewModel
 
         public ManagerViewModel()
         {
-            //StudentAddCommand = new DelegateCommand(StudentAdd, CanAdd);
-            //StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);        
+            // 델리게이트를 이용하여 커맨드가 실행되면 두가지 함수가 실행되게 해주었습니다
+            StudentAddCommand = new DelegateCommand(StudentAdd, CanAdd);
+            StudentDeleteCommand = new DelegateCommand(StudentDelete, CanDelete);        
         }
 
         private void StudentAdd()
         {
-            students.Add(new Student() { Name = _inputStudent.Name });
-            // 부서 부분을 추가해야 합니다!
-            // 데이터 바인딩 이후 추가 예정 -> 콤보박스 바인딩
+            if (string.IsNullOrEmpty(_inputStudent.Name) && string.IsNullOrEmpty(_inputStudent.Department))
+            {
+                students.Add(new Student() { Name = _inputStudent.Name, Department = _inputStudent.Department });
+            }
         }
 
         private bool CanAdd()
@@ -60,10 +62,13 @@ namespace ManageMent_Program.ViewModel
 
         private bool CanDelete()
         {
-             return true;
+            if(SelectedStudent != null)
+            { 
+                return true;
+            }
+            return false;
         }
         #endregion
-
     }
 }
 
