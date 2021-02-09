@@ -11,20 +11,20 @@ namespace ManageMent_Program.ViewModel
     public class ManagerViewModel : BindableBase
     {
         #region Get, Set
-        private string _testName = "이름";
+        private string _studentName;
 
-        public string TestName
+        public string StudentName
         {
-            get => _testName;
-            set => SetProperty(ref _testName, value);
+            get => _studentName;
+            set => SetProperty(ref _studentName, value);
         }
 
-        private string _testDepartment;
+        private string _studentDepartment;
 
-        public string TestDepartment
+        public string StudentDepartment
         {
-            get => _testDepartment;
-            set => SetProperty(ref _testDepartment, value);
+            get => _studentDepartment;
+            set => SetProperty(ref _studentDepartment, value);
         }
 
         private Student _inputStudent = new Student();
@@ -64,15 +64,12 @@ namespace ManageMent_Program.ViewModel
 
         private void StudentAdd()
         {
-            MessageBox.Show(TestName, TestDepartment);
-
-            if (!string.IsNullOrEmpty(TestName) && !string.IsNullOrEmpty(TestDepartment))
+            if (!string.IsNullOrEmpty(_studentName) && !string.IsNullOrEmpty(_studentDepartment))
             {
-                Students.Add(new Student() { Name = TestName, Department = TestDepartment });
+                Students.Add(new Student() { Name = _studentName, Department = _studentDepartment });
             }
-            MessageBox.Show(TestName + "님이 추가되었습니다", "알림");
-            TestName = "";
-            TestDepartment = "";
+            _studentName = "";
+            _studentDepartment = "";
         }
 
         private bool CanAdd()
@@ -83,8 +80,6 @@ namespace ManageMent_Program.ViewModel
         private void StudentDelete()
         {
             Students.Remove(SelectedStudent);
-            MessageBox.Show(TestName + "님이 삭제되었습니다", "알림");
-
         }
 
         private bool CanDelete()
