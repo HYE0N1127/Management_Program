@@ -46,6 +46,7 @@
                 <TextBlock Text="{Binding Name, Mode = OneWay}" Width = "600" Height="50" Margin = "30, 0, 0, 0" FontSize="25"/>
                 <TextBlock Text="{Binding Department, Mode = OneWay}" Width = "100" Height="50" Margin = "30, 0, 0, 0" FontSize="25"/>
             </StackPanel>
+                <adj>
         </DataTemplate>
     </Window.Resources>
 
